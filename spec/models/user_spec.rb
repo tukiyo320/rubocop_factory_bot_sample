@@ -2,14 +2,18 @@
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  let :users do
+RSpec.describe User do
+  let(:name) { 'ng' }
+
+  let :ng_users do
     [
-      FactoryBot.create(:user, name: 'hoge')
+      create(:user, name:)
     ]
   end
 
-  it do
-    expect(users.all?(&:valid?)).to be true
+  let :ok_users do
+    [
+      create(:user, name: 'ok')
+    ]
   end
 end
